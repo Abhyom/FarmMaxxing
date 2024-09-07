@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Check } from "lucide-react";
+import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 
 export default function Home() {
 	return (
@@ -81,7 +82,7 @@ export default function Home() {
 									<img
 										src="heroLogo.jpg"
 										alt=""
-										className="pointer-events-none select-none border border-black rounded-md ml-10"
+										className="pointer-events-none select-none border border-black  rounded-md ml-10"
 									/>
 								</div>
 							</div>
@@ -89,6 +90,11 @@ export default function Home() {
 					</MaxWidthWrapper>
 				</div>
 			</section>
+
+			{/* -------------------------------------------------------------------------- */
+			/*                              Features Section                              */
+			/* -------------------------------------------------------------------------- */}
+			<FeaturesSectionDemo />
 		</div>
 	);
 }
