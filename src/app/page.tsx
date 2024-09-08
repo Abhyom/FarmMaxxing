@@ -27,7 +27,7 @@ export default function Home() {
 										FarmMaxxing
 									</span>{" "}
 									<br />
-									<span className="~-4"> Maximizing</span>
+									<span className="pr-4"> Maximizing</span>
 									<span className="bg-light-purple px-2 text-slate-900">
 										Farmers'
 									</span>{" "}
