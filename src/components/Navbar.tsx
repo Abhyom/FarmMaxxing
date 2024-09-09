@@ -1,11 +1,13 @@
 import React from "react";
 import { buttonVariants } from "@/components/ui/button";
-
+import { cookies } from "next/headers";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Link from "next/link";
 import Cart from "@/components/Cart";
-const Navbar = () => {
-	const user = null;
+import { getServerSideUser } from "@/lib/payload-utils";
+const Navbar = async () => {
+	const nextCookies = cookies();
+	const { user } = await getServerSideUser(nextCookies);
 	return (
 		<div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
 			<header className="relative bg-white ">
@@ -31,7 +33,7 @@ const Navbar = () => {
 											className={buttonVariants({
 												variant: "ghost",
 												className:
-													"rounded-[0.50rem] text-gray-900 ",
+													"rounded-[0.57rem] text-gray-900 ",
 											})}
 										>
 											Sign in
@@ -45,16 +47,20 @@ const Navbar = () => {
 										/>
 									)}
 
-									<Link
-										href="/sign-up"
-										className={buttonVariants({
-											variant: "ghost",
-											className:
-												"rounded-[0.50rem] text-gray-900 ",
-										})}
-									>
-										Create account
-									</Link>
+									{user ? (
+										<p></p>
+									) : (
+										<Link
+											href="/sign-up"
+											className={buttonVariants({
+												variant: "ghost",
+												className:
+													"rounded-[0.57rem] text-gray-900 ",
+											})}
+										>
+											Create account
+										</Link>
+									)}
 
 									{user ? (
 										<span
