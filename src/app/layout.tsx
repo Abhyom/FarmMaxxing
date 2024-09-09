@@ -17,17 +17,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={cn("relative h-full bg-white", inter.className)}>
-        <main className="flex flex-col min-h-[calc(100vh-3.5rem-1px)]">
-          <Providers>
-            <Navbar />
-            <div className="flex-1 flex flex-col h-full">{children}</div>
-            {/* ***Footer*** */}
-          </Providers>
-        </main>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={cn("relative h-full bg-white", inter.className)}>
+				<main className="flex flex-col min-h-[calc(100vh-3.5rem-1px)]">
+					<Providers>
+						<Navbar />
+						<div className="flex-1 flex flex-col h-full">
+							{children}
+						</div>
+						{/* ***Footer*** */}
+					</Providers>
+				</main>
+			</body>
+		</html>
+	);
 }
