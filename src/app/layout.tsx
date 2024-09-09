@@ -19,9 +19,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={cn("relative h-full bg-[#F0F0F0]", inter.className)}
-			>
+			<body className={cn("relative h-full bg-white", inter.className)}>
 				<main className="flex flex-col min-h-[calc(100vh-3.5rem-1px)]">
 					<Providers>
 						<Navbar />
